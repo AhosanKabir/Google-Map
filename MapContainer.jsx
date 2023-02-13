@@ -49,3 +49,26 @@ const WrappedMapContainer = GoogleApiWrapper({
 
 export default WrappedMapContainer;
 
+
+// ********** with Div With Mark your position or place ************************************
+
+
+import { Component } from 'react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+
+class MapContainer extends Component {
+    render() {
+        return (
+            <div style={{width: "100%", height: "310px", position: "relative"}}>
+                <Map
+                  google={this.props.google}
+                  zoom={8}
+                  style={{width: "100%", height: "100%", position: "absolute"}}
+                  initialCenter={{ lat: 23.994387906719123, lng: 90.3216486245878}}
+                >
+                    <Marker position={{ lat: 23.994387906719123, lng: 90.3216486245878}} />
+                </Map>
+            </div>
+        );
+    }
+}
